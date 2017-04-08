@@ -27,7 +27,7 @@ task migrateFunction(type: jp.classmethod.aws.gradle.lambda.AWSLambdaMigrateFunc
     functionName = 'ripe-atlas-v2-contract-test-trigger'
     runtime = 'java8'
     zipFile = jar.archivePath
-    handler = 'nz.mikhailov.atlas.CodeshipBuildTrigger'
+    handler = 'nz.mikhailov.atlas.LambdaHandler'
     role = System.env.AWS_LAMBDA_ROLE
     functionDescription = 'Triggers last build that will re-run contract test in Codeship'
     timeout = 15

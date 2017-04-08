@@ -1,4 +1,4 @@
-package nz.mikhailov.codeship.v1;
+package nz.mikhailov.atlas.codeship.v1;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

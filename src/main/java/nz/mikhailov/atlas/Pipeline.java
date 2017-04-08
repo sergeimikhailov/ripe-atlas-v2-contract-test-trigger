@@ -1,13 +1,12 @@
-package nz.mikhailov;
+package nz.mikhailov.atlas;
 
-import nz.mikhailov.codeship.v1.Build;
-import nz.mikhailov.codeship.v1.CodeshipApi;
-import nz.mikhailov.codeship.v1.Project;
+import nz.mikhailov.atlas.codeship.v1.Build;
+import nz.mikhailov.atlas.codeship.v1.CodeshipApi;
+import nz.mikhailov.atlas.codeship.v1.Project;
 
 import javax.ws.rs.core.Response;
 import java.util.Optional;
 
-import static java.lang.Integer.parseInt;
 import static java.util.Comparator.reverseOrder;
 import static java.util.Optional.empty;
 import static javax.ws.rs.core.Response.Status.NOT_FOUND;
@@ -22,9 +21,8 @@ public class Pipeline {
     this.api = api;
   }
 
-  public Optional<Integer> getLastBuildId(String projectIdParam) {
+  public Optional<Integer> getLastBuildId(int projectId) {
 
-    int projectId = parseInt(projectIdParam);
     Response response = api.getProject(projectId);
     if (response.getStatus() == NOT_FOUND.getStatusCode()) {
       return empty();

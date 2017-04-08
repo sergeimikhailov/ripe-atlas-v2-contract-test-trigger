@@ -1,4 +1,4 @@
-package nz.mikhailov.codeship.v1;
+package nz.mikhailov.atlas.codeship.v1;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
