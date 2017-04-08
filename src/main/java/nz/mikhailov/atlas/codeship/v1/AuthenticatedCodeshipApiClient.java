@@ -28,14 +28,14 @@ public class AuthenticatedCodeshipApiClient
   @Override
   public Response getProject(int projectId) {
 
-    logger.log("Requesting project with id: " + projectId);
+    logger.log("Requesting project with id: " + projectId + "\n");
     return proxy.getProject(projectId);
   }
 
   @Override
   public Response restartBuild(int buildId) {
 
-    logger.log("Restarting build with id: " + buildId);
+    logger.log("Restarting build with id: " + buildId + "\n");
     return proxy.restartBuild(buildId);
   }
 

@@ -19,12 +19,12 @@ public class EnvironmentConfiguration
   public EnvironmentConfiguration(LambdaLogger logger) {
 
     codeshipBaseUrl = getenv("CODESHIP_BASE_URL");
-    logger.log("Reading environment variable CODESHIP_BASE_URL with value: " + codeshipBaseUrl);
+    logger.log("Reading environment variable CODESHIP_BASE_URL with value: " + codeshipBaseUrl + "\n");
     codeshipProjectId = parseInt(getenv("CODESHIP_PROJECT_ID"));
-    logger.log("Reading environment variable CODESHIP_PROJECT_ID with value: " + codeshipProjectId);
+    logger.log("Reading environment variable CODESHIP_PROJECT_ID with value: " + codeshipProjectId + "\n");
     codeshipApiKey = getenv("CODESHIP_API_KEY");
     logger.log("Reading environment variable CODESHIP_API_KEY with "
-        + (codeshipApiKey.isEmpty() ? "empty value" : "NOT empty value"));
+        + (codeshipApiKey.isEmpty() ? "empty value" : "NOT empty value") + "\n");
     this.logger = logger;
   }
 

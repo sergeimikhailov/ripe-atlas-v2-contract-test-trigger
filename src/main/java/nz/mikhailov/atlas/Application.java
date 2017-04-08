@@ -20,7 +20,7 @@ public class Application {
 
   public void run() {
 
-    logger.log("Restarting last build");
+    logger.log("Restarting last build" + "\n");
     pipeline
         .getLastBuildId(configuration.getCodeshipProjectId())
         .ifPresent(pipeline::restartBuild);

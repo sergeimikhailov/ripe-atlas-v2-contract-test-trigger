@@ -27,19 +27,19 @@ public class Pipeline {
 
   public Optional<Integer> getLastBuildId(int projectId) {
 
-    logger.log("Requesting last buildId for projectId: " + projectId);
+    logger.log("Requesting last buildId for projectId: " + projectId + "\n");
     Response response = api.getProject(projectId);
     if (response.getStatus() == NOT_FOUND.getStatusCode()) {
-      logger.log("Response 404 for projectId: " + projectId);
+      logger.log("Response 404 for projectId: " + projectId + "\n");
       return empty();
     }
     if (response.getStatus() != OK.getStatusCode()) {
-      logger.log("Failed to get builds for projectId: " + projectId);
+      logger.log("Failed to get builds for projectId: " + projectId + "\n");
       throw new RuntimeException("Unexpected response " + response.getStatus());
     }
     Project project = response.readEntity(Project.class);
     if (project.getBuilds() == null || project.getBuilds().isEmpty()) {
-      logger.log("There are no builds for projectId: " + projectId);
+      logger.log("There are no builds for projectId: " + projectId + "\n");
       return empty();
     }
     return project.getBuilds()
@@ -51,10 +51,10 @@ public class Pipeline {
 
   public void restartBuild(int buildId) {
 
-    logger.log("Requesting restart for buildId: " + buildId);
+    logger.log("Requesting restart for buildId: " + buildId + "\n");
     Response response = api.restartBuild(buildId);
     if (response.getStatus() != 200) {
-      logger.log("Unexpected response code: " + response.getStatus() + " for buildId: " + buildId);
+      logger.log("Unexpected response code: " + response.getStatus() + " for buildId: " + buildId + "\n");
       throw new RuntimeException("Failed to trigger the build");
     }
   }
