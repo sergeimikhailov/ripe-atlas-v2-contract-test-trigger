@@ -1,0 +1,16 @@
+{
+  "priority": 60,
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/api/v1/projects/\\d+\\.json"
+  },
+  "response": {
+    "status": 404,
+    "jsonBody": {
+      "error": "Unable to find ressource"
+    },
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "priority": 40,
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/v1/projects/100101.json"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": 2100101,
+      "uuid": "4855e826-3bdc-4eaa-9098-3b0644c98e5d",
+      "repository_name": "organization/repository",
+      "repository_provider": "github",
+      "builds": [
+        {
+          "id": 50000001,
+          "uuid": "736aadcc-fa02-49aa-8aac-4bc07e6b9b82",
+          "project_id": 100101,
+          "status": "error",
+          "github_username": "usename",
+          "commit_id": "7c0fe8b7fcb0a16e74d9b58689c0d85e90141df0",
+          "message": "commit message.",
+          "branch": "master",
+          "started_at": "2017-04-01T03:24:36.569Z",
+          "finished_at": "2017-04-01T03:25:01.585Z"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+}

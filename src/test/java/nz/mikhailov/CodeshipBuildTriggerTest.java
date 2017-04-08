@@ -1,4 +1,4 @@
-package nz.mikhailov.atlas;
+package nz.mikhailov;
 
 import org.junit.Test;
 

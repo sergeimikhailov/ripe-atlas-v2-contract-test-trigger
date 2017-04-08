@@ -1,0 +1,20 @@
+{
+  "priority": 35,
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/v1/projects/100100.json"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": 100100,
+      "uuid": "1c522808-0763-4352-8547-2e15d554806a",
+      "repository_name": null,
+      "repository_provider": null,
+      "builds": []
+    },
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+}

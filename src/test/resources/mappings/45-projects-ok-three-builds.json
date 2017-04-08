@@ -1,0 +1,57 @@
+{
+  "priority": 45,
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/v1/projects/100103.json"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": 176893,
+      "uuid": "e1353f90-6b0e-0134-54fc-2e8398cca30e",
+      "repository_name": "organization/repository",
+      "repository_provider": "github",
+      "builds": [
+        {
+          "id": 50000003,
+          "uuid": "35b0912e-a047-49aa-b645-20f8280c54f9",
+          "project_id": 100103,
+          "status": "error",
+          "github_username": "usename",
+          "commit_id": "7c0fe8b7fcb0a16e74d9b58689c0d85e90141df0",
+          "message": "This reverts commit 23bc94e95de35ac8074642e80d013459a47d5591.",
+          "branch": "master",
+          "started_at": "2017-04-01T03:24:36.569Z",
+          "finished_at": "2017-04-01T03:25:01.585Z"
+        },
+        {
+          "id": 50000002,
+          "uuid": "f1f54e18-b6a8-4c7a-9e9e-912ae2e10e34",
+          "project_id": 100103,
+          "status": "error",
+          "github_username": "usename",
+          "commit_id": "23bc94e95de35ac8074642e80d013459a47d5591",
+          "message": "Failing test to see CI tool reaction",
+          "branch": "master",
+          "started_at": "2016-10-02T22:12:21.533Z",
+          "finished_at": "2016-10-02T22:13:18.859Z"
+        },
+        {
+          "id": 50000001,
+          "uuid": "e52007ee-5978-433c-abc5-9ee16bdbe10e",
+          "project_id": 100103,
+          "status": "success",
+          "github_username": "usename",
+          "commit_id": "f0005994a65e9dfae27ca4c745fda4ffa236012d",
+          "message": "New test to trigger CI tool",
+          "branch": "master",
+          "started_at": "2016-10-02T22:15:35.136Z",
+          "finished_at": "2016-10-02T22:16:33.353Z"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "priority": 30,
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/v1/projects/100500.json"
+  },
+  "response": {
+    "status": 500,
+    "jsonBody": {
+      "error": "Internal Server Error"
+    },
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+}

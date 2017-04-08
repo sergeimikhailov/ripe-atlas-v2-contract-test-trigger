@@ -1,0 +1,21 @@
+{
+  "priority": 10,
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/api/v1/.*",
+    "queryParameters": {
+      "api_key": {
+        "absent": ""
+      }
+    }
+  },
+  "response": {
+    "status": 401,
+    "jsonBody": {
+      "error": "Could not authenticate API Key."
+    },
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+}
