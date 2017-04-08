@@ -38,8 +38,8 @@ task migrateFunction(type: jp.classmethod.aws.gradle.lambda.AWSLambdaMigrateFunc
     handler = 'nz.mikhailov.atlas.LambdaHandler'
     role = System.env.AWS_LAMBDA_ROLE
     functionDescription = 'Triggers last build that will re-run contract test in Codeship'
-    timeout = 15
-    memorySize = 128
+    timeout = 60
+    memorySize = 256
     environment = [
         CODESHIP_BASE_URL: "https://codeship.com",
         CODESHIP_PROJECT_ID: System.env.CODESHIP_PROJECT_ID,
