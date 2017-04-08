@@ -1,5 +1,6 @@
 package nz.mikhailov.atlas.codeship.v1;
 
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import nz.mikhailov.atlas.config.Configuration;
 
 import javax.ws.rs.core.Response;
@@ -7,12 +8,16 @@ import javax.ws.rs.core.Response;
 import static javax.ws.rs.client.ClientBuilder.newClient;
 import static org.glassfish.jersey.client.proxy.WebResourceFactory.newResource;
 
-public class AuthenticatedCodeshipApiClient implements CodeshipApi {
+public class AuthenticatedCodeshipApiClient
+    implements CodeshipApi {
+
+  private final LambdaLogger logger;
 
   private final CodeshipApi proxy;
 
-  public AuthenticatedCodeshipApiClient(Configuration configuration) {
+  public AuthenticatedCodeshipApiClient(Configuration configuration, LambdaLogger logger) {
 
+    this.logger = logger;
     this.proxy = newResource(
         CodeshipApi.class,
         newClient()
@@ -23,12 +28,14 @@ public class AuthenticatedCodeshipApiClient implements CodeshipApi {
   @Override
   public Response getProject(int projectId) {
 
+    logger.log("Requesting project with id: " + projectId);
     return proxy.getProject(projectId);
   }
 
   @Override
   public Response restartBuild(int buildId) {
 
+    logger.log("Restarting build with id: " + buildId);
     return proxy.restartBuild(buildId);
   }
 

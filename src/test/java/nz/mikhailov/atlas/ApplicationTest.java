@@ -1,5 +1,6 @@
 package nz.mikhailov.atlas;
 
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import nz.mikhailov.atlas.config.Configuration;
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,6 +28,9 @@ public class ApplicationTest {
 
   @Mock
   private Pipeline pipeline;
+
+  @Mock
+  private LambdaLogger logger;
 
   @InjectMocks
   private Application application;

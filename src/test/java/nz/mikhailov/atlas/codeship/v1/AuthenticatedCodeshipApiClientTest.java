@@ -1,5 +1,6 @@
 package nz.mikhailov.atlas.codeship.v1;
 
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import nz.mikhailov.atlas.config.Configuration;
 import org.junit.Rule;
@@ -29,6 +30,9 @@ public class AuthenticatedCodeshipApiClientTest {
   @Mock
   private Configuration configuration;
 
+  @Mock
+  private LambdaLogger logger;
+
   @Test
   public void shouldFormRequestWithValidKey() throws Exception {
 
@@ -49,7 +53,7 @@ public class AuthenticatedCodeshipApiClientTest {
 
     when(configuration.getCodeshipBaseUrl()).thenReturn("http://localhost:" + wireMockRule.port());
     when(configuration.getApiKey()).thenReturn(key);
-    return new AuthenticatedCodeshipApiClient(configuration);
+    return new AuthenticatedCodeshipApiClient(configuration, logger);
   }
 
 }
