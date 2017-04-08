@@ -21,7 +21,7 @@ public class PipelineIntegrationTest {
   public WireMockRule wireMockRule = new WireMockRule(wireMockConfig().dynamicPort());
 
   @Test
-  public void shouldReturnEmptyOptionalWhenNotFound() throws Exception {
+  public void getLastBuildIdShouldReturnEmptyOptionalWhenNotFound() throws Exception {
 
     Pipeline pipeline = new Pipeline(clientWithValidKey());
     Optional<Integer> result = pipeline.getLastBuildId(100000);
@@ -29,21 +29,21 @@ public class PipelineIntegrationTest {
   }
 
   @Test(expected = RuntimeException.class)
-  public void shouldThrowWhenAuthFailed() throws Exception {
+  public void getLastBuildIdShouldThrowWhenAuthFailed() throws Exception {
 
     Pipeline pipeline = new Pipeline(clientWithInvalidKey());
     pipeline.getLastBuildId(100100);
   }
 
   @Test(expected = RuntimeException.class)
-  public void shouldThrowWhenStatusIs500() throws Exception {
+  public void getLastBuildIdShouldThrowWhenStatusIs500() throws Exception {
 
     Pipeline pipeline = new Pipeline(clientWithValidKey());
     pipeline.getLastBuildId(100500);
   }
 
   @Test
-  public void shouldReturnEmptyOptionalWhenNoBuilds() throws Exception {
+  public void getLastBuildIdShouldReturnEmptyOptionalWhenNoBuilds() throws Exception {
 
     Pipeline pipeline = new Pipeline(clientWithValidKey());
     Optional<Integer> result = pipeline.getLastBuildId(100100);
@@ -51,7 +51,7 @@ public class PipelineIntegrationTest {
   }
 
   @Test
-  public void shouldReturnOneWhenOnlyOneBuild() throws Exception {
+  public void getLastBuildIdShouldReturnOneWhenOnlyOneBuild() throws Exception {
 
     Pipeline pipeline = new Pipeline(clientWithValidKey());
     int result = pipeline.getLastBuildId(100101).get();
@@ -59,11 +59,32 @@ public class PipelineIntegrationTest {
   }
 
   @Test
-  public void shouldReturnLastWhenManyBuilds() throws Exception {
+  public void getLastBuildIdShouldReturnLastWhenManyBuilds() throws Exception {
 
     Pipeline pipeline = new Pipeline(clientWithValidKey());
     int result = pipeline.getLastBuildId(100103).get();
     assertThat(result, is(equalTo(50000003)));
+  }
+
+  @Test(expected = RuntimeException.class)
+  public void restartBuildShouldThrowWhenUnauthorized() throws Exception {
+
+    Pipeline pipeline = new Pipeline(clientWithInvalidKey());
+    pipeline.restartBuild(50000003);
+  }
+
+  @Test(expected = RuntimeException.class)
+  public void restartBuildShouldThrowWhenBuildNotFound() throws Exception {
+
+    Pipeline pipeline = new Pipeline(clientWithValidKey());
+    pipeline.restartBuild(50000009);
+  }
+
+  @Test
+  public void restartBuildShouldNotThrowWhenResponseIsOk() throws Exception {
+
+    Pipeline pipeline = new Pipeline(clientWithValidKey());
+    pipeline.restartBuild(50000003);
   }
 
   private CodeshipApi clientWithValidKey() {

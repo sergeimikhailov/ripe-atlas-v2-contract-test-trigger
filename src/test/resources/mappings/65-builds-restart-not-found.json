@@ -1,0 +1,16 @@
+{
+  "priority": 65,
+  "request": {
+    "method": "POST",
+    "urlPathPattern": "/api/v1/builds/\\d+/restart\\.json"
+  },
+  "response": {
+    "status": 404,
+    "jsonBody": {
+      "error": "Unable to find ressource"
+    },
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+}

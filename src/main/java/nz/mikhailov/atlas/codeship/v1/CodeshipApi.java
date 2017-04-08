@@ -18,7 +18,7 @@ public interface CodeshipApi {
   Response getProject(@PathParam("projectId") int projectId);
 
   @POST
-  @Path("/builds/{buildId}/restart")
+  @Path("/builds/{buildId}/restart.json")
   @Produces(APPLICATION_JSON)
   Response restartBuild(@PathParam("buildId") int buildId);
 

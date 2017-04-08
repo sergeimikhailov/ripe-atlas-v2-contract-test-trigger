@@ -1,7 +1,7 @@
 {
   "priority": 10,
   "request": {
-    "method": "GET",
+    "method": "ANY",
     "urlPathPattern": "/api/v1/.*",
     "queryParameters": {
       "api_key": {

@@ -1,0 +1,26 @@
+{
+  "priority": 50,
+  "request": {
+    "method": "POST",
+    "urlPath": "/api/v1/builds/50000003/restart.json"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": 50000003,
+      "uuid": "31a0b316-0472-4a7b-b165-a82acb8a0681",
+      "project_id": 2100101,
+      "status": "error",
+      "github_username": "username",
+      "commit_id": "7c0fe8b7fcb0a16e74d9b58689c0d85e90141df0",
+      "message": "Commit message.",
+      "branch": "master",
+      "started_at": "2017-04-01T03:24:36.569Z",
+      "finished_at": "2017-04-01T03:25:01.585Z",
+      "debug_connection": null
+    },
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+}

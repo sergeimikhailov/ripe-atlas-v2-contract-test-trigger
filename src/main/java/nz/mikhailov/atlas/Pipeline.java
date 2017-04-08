@@ -43,6 +43,10 @@ public class Pipeline {
 
   public void restartBuild(int buildId) {
 
+    Response response = api.restartBuild(buildId);
+    if (response.getStatus() != 200) {
+      throw new RuntimeException("Failed to trigger the build, response code " + response.getStatus());
+    }
   }
 
 }
