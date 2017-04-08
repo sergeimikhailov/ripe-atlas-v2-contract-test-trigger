@@ -18,7 +18,6 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 export AWS_REGION=ap-southeast-2
 export AWS_LAMBDA_ROLE=arn:aws:iam::<account-id>:role/<aws-lambda-role-name>
-export CODESHIP_BASE_URL=https://codeship.com
 export CODESHIP_PROJECT_ID=123456
 export CODESHIP_API_KEY=f9d29eb15ad7471f98c1443735302259
 ./gradlew migrateFunction
