@@ -76,6 +76,14 @@ public class PipelineIntegrationTest {
     assertThat(result, is(equalTo(50000003)));
   }
 
+  @Test
+  public void getLastBuildShouldReturnLastEvenWhenPresentedInWrongOrder() throws Exception {
+
+    Pipeline pipeline = new Pipeline(clientWithValidKey(), logger);
+    int result = pipeline.getLastBuildId(100104).get();
+    assertThat(result, is(equalTo(60000003)));
+  }
+
   @Test(expected = RuntimeException.class)
   public void restartBuildShouldThrowWhenUnauthorized() throws Exception {
 
