@@ -1,8 +1,11 @@
 # RIPE Atlas API Contract Test Trigger
 
+[ ![Codeship Status for sergeimikhailov/ripe-atlas-v2-contract-test-trigger](https://app.codeship.com/projects/b4d78040-f882-0134-33ee-76e4f316aab3/status?branch=master)](https://app.codeship.com/projects/210990)
+
 This project contains AWS Lambda function that will trigger latest build in Codeship for given Codeship project.
 
 Written to trigger [ripe-atlas-v2-contract-test](//github.com/sergeimikhailov/ripe-atlas-v2-contract-test) build on schedule.
+That repo contains contract test for RIPE NCC Atlas Probe API v2 which should run regularly. And free Codeship account does not provide scheduling facility ;-) 
 
 To build and test:
 ```bash
