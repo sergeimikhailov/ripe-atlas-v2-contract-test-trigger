@@ -9,19 +9,12 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Project {
 
-  private final int id;
   private final List<Build> builds;
 
   @JsonCreator
-  public Project(@JsonProperty("id") int id, @JsonProperty("builds") List<Build> builds) {
+  public Project(@JsonProperty("builds") List<Build> builds) {
 
-    this.id = id;
     this.builds = builds;
-  }
-
-  public int getId() {
-
-    return id;
   }
 
   public List<Build> getBuilds() {
