@@ -1,6 +1,6 @@
 # RIPE Atlas API Contract Test Trigger
 
-[ ![Codeship Status for sergeimikhailov/ripe-atlas-v2-contract-test-trigger](https://app.codeship.com/projects/b4d78040-f882-0134-33ee-76e4f316aab3/status?branch=master)](https://app.codeship.com/projects/210990)
+[ ![Codeship Status for sergeimikhailov/ripe-atlas-v2-contract-test-trigger](https://app.codeship.com/projects/b4d78040-f882-0134-33ee-76e4f316aab3/status?branch=master)](https://app.codeship.com/projects/210990) [![Coverage Status](https://coveralls.io/repos/github/sergeimikhailov/ripe-atlas-v2-contract-test-trigger/badge.svg?branch=master)](https://coveralls.io/github/sergeimikhailov/ripe-atlas-v2-contract-test-trigger?branch=master)
 
 This project contains AWS Lambda function that will trigger latest build in Codeship for given Codeship project.
 
