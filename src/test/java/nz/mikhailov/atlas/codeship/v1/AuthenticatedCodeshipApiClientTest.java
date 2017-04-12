@@ -45,7 +45,7 @@ public class AuthenticatedCodeshipApiClientTest {
   public void shouldFormRequestWithInvalidKey() throws Exception {
 
     CodeshipApi client = authenticatedClientWithKey("invalid-api-key");
-    Response response = client.getProject(100100);
+    Response response = client.restartBuild(50000003);
     assertThat(response.getStatus(), is(equalTo(UNAUTHORIZED.getStatusCode())));
   }
 
